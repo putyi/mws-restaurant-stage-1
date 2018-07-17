@@ -21,7 +21,7 @@
       <h1><a href="/mws-restaurant-stage-1/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
+    <ul tabindex="0" id="breadcrumb" >
       <li><a href="/mws-restaurant-stage-1/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -32,21 +32,21 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container">
+    <section tabindex="-1" id="map-container">
       <div id="map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+      <h1 tabindex="0" id="restaurant-name"></h1>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
       <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <table tabindex="0" id="restaurant-hours"></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
-    <section id="reviews-container">
+    <section tabindex="0" id="reviews-container">
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
