@@ -1,23 +1,5 @@
 //service worker
 
-
-
-/*(function(){
-    if (!navigator.serviceWorker) return;
-
-    navigator.serviceWorker.register('sw.js').then(function (registration) {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }.catch(function (err) {
-        console.log('ServiceWorker registration failed: ', err);
-        })
-    )
-})*/
-
-
-self.addEventListener('install', function (event) {
-    // Perform install steps
-  }); 
-  
   var CACHE_NAME = 'restaurant-cache';
 
   var urlsToCache = [
@@ -40,9 +22,9 @@ self.addEventListener('install', function (event) {
     './img/9.jpg',
     './img/10.jpg',
   ];
-  
+
   self.addEventListener('install', function (event) {
-    // Perform install steps
+    //console.log(event);
     event.waitUntil(
       caches.open(CACHE_NAME)
         .then(function (cache) {
@@ -51,11 +33,11 @@ self.addEventListener('install', function (event) {
         })
     );
   });
-  
+
   self.addEventListener('activate',  event => {
     event.waitUntil(self.clients.claim());
   });
-  
+
   self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request, {ignoreSearch:true}).then(response => {
